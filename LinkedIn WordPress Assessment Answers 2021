@@ -1,0 +1,152 @@
+1. Which folder in a WordPress install is not affected by an automatic WordPress update?
+
+/wp-include
+/wp-admin
+/root – Correct Answer
+/wp-content
+
+---------------------------------------------------
+
+2.You can harden your WordPress site security by adding______to your wp-config.php file?
+
+hashes and rCAPTCHA
+custom action hooks and filters
+database usernames and passwords
+unique keys and saits – Correct Answer
+
+---------------------------------------------------
+
+3.In WordPress, what is the block editor used for?
+
+injecting specialized scripts into the content area
+creating a site layout
+cropping images in the media library
+creating and laying out content – Correct Answers
+
+---------------------------------------------------
+
+4. Which WP_CLI command would you use to manage the capabilities of a user role?
+wp cap
+wp role
+wp admin – Correct Answer
+wp manage
+
+---------------------------------------------------
+
+5. On a regular WordPress install, what is the difference between transients and the object cache?
+Transients are available for the duration of a user session and apply to all page components. The object cache is available only for scripts.
+Transients are persistent and write to the wp_options. The object cache persists only for the particular page load. – Correct Answer
+Transients persist only for the particular page load. The object cache is persistent and writes to the wp_options table.
+Transients are stored in the WordPress database. The object cache is stored on the server where the WordPress install is located.
+
+---------------------------------------------------
+
+6. The REST API provides public data, which is accessible any client anonymously, as well as private data available only after authentication. How could you ensure that no one can anonymously access site data via the REST API?
+Use the rest_authentication_errors() filter along with cookie authentication to limit access to logged in users.,
+use the rest_authentication_errors() filter along with the is_user_logged_in() conditional to limit access to logged in users. – Correct Answer
+disabled the REST API via the site’s wp-config.php file
+Use the disable REST API plugin
+
+---------------------------------------------------
+
+7. Review the HTML on line 1. The goal of the PHP on line 2 is to extract the field value and assign it to a variable prior to inserting into the database. What’s wrong with this PHP code?
+1. &lt;input type=”text” id=”title” /&gt;
+2. $title = $_POST[ ‘title’ ] ;
+The code sample does not sanitize the form data. It should use the sanitize_text_field() function and look like this:
+          $title = sanitize_text_field( $_POST[ ‘title’ ]); – Correct Answer
+There is no error. The code follows WordPress best practices.
+The code sample does not allow for translation. It should use a translation function and look like this
+          $title= __($_POST[ ‘title’ ] );
+        The code sample does not use the GET method. It should be wrapped in the get_post_field()                    function and look like this:
+        $title = get_post_field( $GET[ ‘title’ ]
+
+---------------------------------------------------
+
+8. Which of these is not a part of the internationalization and localization process?
+translators translating the POT file into a PO file, one for each language
+using a gettext function to wrap translatable strings when writing code
+installing/using the WordPress Multilingual Plugin
+using a tool like Poedit to parse souce code and extract translatable strings into a POT file – Correct Answer
+
+---------------------------------------------------
+
+9.What is the role of a WordPress theme?
+controls colors, fonts, and page layouts
+all of these answers – Correct Answer
+ensures a site is mobile responsive
+adds accessibility enhancements such as keyboard navigation and skip links
+
+---------------------------------------------------
+
+10. What can you not configure via wp-config.php?
+changing the default user role – Correct Answer
+changing the default wp_table prefix
+changing your site or WordPress address
+changing the default number of post revisions
+
+---------------------------------------------------
+
+11. What is the preferred method in WordPress for adding a CSS file to a theme or plugin?
+Register the stylesheet using wp_enqueue_style and hook it to wp_enqueue_styles, like this:
+       <?php
+      add_action ( ‘wp_enqueue_styles’, ‘loan_styles’ ); 
+ 
+     function load_styles() {
+      wp_enqueue_style( ‘style-name’ , get_stylesheet_uri();
+     }
+Register the stylesheet using wp_enqueue_style and hook it to wp_enqueue_scripts, like this:
+          <?php
+          add_action( ‘wp_enqueue_scripts’, ‘load_styles’ );
+          function load_styles() {
+          wp_enqueue_style( ‘style-name’ , get_stylesheet_uri();
+            }
+
+
+
+use an internal stylesheet for each template to avoid loading unused styles on a particular page like this:
+        <html>
+       <style>
+       P {
+       font-size:16px;
+          }
+      </style>
+      </html>
+Link to the stylesheet directly from the HTML header, like this:
+        <html>
+        <link rel=”stylesheet” type=”text/css” href=”style.css”>
+         </html>
+
+---------------------------------------------------
+
+12. What technique would you use to secure data before rendering it to a user?
+validate and escape
+validate and sanitize
+escape and sanitize – Correct Answer
+escape and secure
+
+---------------------------------------------------
+
+13. If your WordPress site is seriously compromised, what is the best course of action to return your site to good health?
+Determine the date of the attack and restore your site to a backup point prior to the date.
+Hire a third-party service to clean up your site because it’s difficult for someone who isn’t a WordPress security expert to find and remove all traces of an attack. – Correct Answer
+Change your hosting password, your WordPress admin password, and your database password.
+Manually delete suspicious files on the server and delete any database tables that aren’t core WordPress.
+
+---------------------------------------------------
+
+14. Within the editor, blocks are rendered as JavaScript, How are blocks rendered on the front end of a site?
+as HTML comments
+as JavaScript Comments
+as a React component
+as plain HTML – Correct Answer
+
+---------------------------------------------------
+
+15. Where can you find the official WordPress documentation and usage guide?
+ 
+support.wordpress.org
+developer.wordpress.org – Correct Answer
+support.wordpress.com
+developer.wordpress.com
+
+---------------------------------------------------
